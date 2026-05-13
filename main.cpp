@@ -24,15 +24,16 @@ solo su dati validi.
 
 */
 
-bool controllo;
+
 
 int main() {
     float m[APP][GIORNI];
     int scelta;
+    bool controllo;
 
     do {
         cout << "\nMENU\n";
-        cout << "Premere 1 per Inserire consumi\n Premere 2 per vedere la tabella\n Premere 3 per vedere il consumo totale\n";
+        cout << " Premere 1 per Inserire consumi\n Premere 2 per vedere la tabella\n Premere 3 per vedere il consumo totale\n Premere 4 per salvare in CSV\n ";
         cin >> scelta;
 
         switch (scelta) {
@@ -60,6 +61,13 @@ int main() {
                     cout << "Prima inserisci i dati." << endl;
                     break;
                 }
+            case 4:
+                if (!controllo) {
+                    cout << "Inserire prima i dati oppure caricarli da CSV";
+                } else {
+                    salvaCsv(m);
+                }
+                break;
 
 
             case 0:
